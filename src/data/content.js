@@ -11,8 +11,7 @@ export const whatsappMessage = encodeURIComponent(
   "Olá, gostaria de agendar um atendimento na VERTEX AUTO."
 );
 
-export const heroImage =
-  "https://images.unsplash.com/photo-1616788494707-ec28f08d05a1?q=80&w=1800";
+export const heroImage = "/images/hero-mercedes.jpg";
 
 export const processSteps = [
   {
@@ -81,8 +80,8 @@ export const services = [
 ];
 
 export const beforeAfter = {
-  before: "https://images.unsplash.com/photo-1600705722738-4e3ba3786b00?q=80&w=1600&sat=-100",
-  after: "https://images.unsplash.com/photo-1619767886558-efdc259cde1a?q=80&w=1600",
+  before: "/images/before-car.jpg",
+  after: "/images/after-car.jpg",
 };
 
 export const benefits = [

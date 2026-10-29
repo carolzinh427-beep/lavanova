@@ -31,21 +31,21 @@ export default function Hero() {
 
       tl.fromTo(
         imageRef.current,
-        { scale: 1.25, filter: "brightness(0.55) saturate(0.85)" },
-        { scale: 1, filter: "brightness(1) saturate(1)", ease: "power2.out" },
+        { scale: 1.04, filter: "brightness(0.7) saturate(0.95)" },
+        { scale: 1, filter: "brightness(1) saturate(1.05)", ease: "power2.out" },
         0
       );
 
       tl.fromTo(
         overlayRef.current,
-        { opacity: 0.75 },
-        { opacity: 0.25, ease: "power2.out" },
+        { opacity: 0.85 },
+        { opacity: 0.35, ease: "power2.out" },
         0
       );
 
       tl.fromTo(
         sheenRef.current,
-        { xPercent: -130, opacity: 0.5 },
+        { xPercent: -130, opacity: 0.4 },
         { xPercent: 130, opacity: 0, ease: "power1.inOut" },
         0.1
       );
@@ -64,13 +64,18 @@ export default function Hero() {
     <section id="top" ref={sectionRef} className="relative h-screen w-full overflow-hidden">
       <div
         ref={imageRef}
-        className="absolute inset-0 bg-cover bg-center will-change-transform"
+        className="absolute inset-0 bg-cover bg-center md:bg-[center_50%] will-change-transform"
         style={{ backgroundImage: `url(${heroImage})` }}
         role="img"
-        aria-label="Veículo premium em estúdio escuro, destacado por iluminação precisa"
+        aria-label="Mercedes-AMG de luxo em estúdio escuro, acabamento espelhado e vitrificado"
       />
 
-      <div ref={overlayRef} className="absolute inset-0 bg-bg" style={{ opacity: 0.75 }} />
+      {/* Gradiente escuro lateral para legibilidade sem cortar a Mercedes */}
+      <div
+        ref={overlayRef}
+        className="absolute inset-0 bg-gradient-to-r from-bg via-bg/85 md:via-bg/70 to-bg/40 md:to-transparent"
+      />
+      <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-bg to-transparent pointer-events-none" />
 
       <div
         ref={sheenRef}
